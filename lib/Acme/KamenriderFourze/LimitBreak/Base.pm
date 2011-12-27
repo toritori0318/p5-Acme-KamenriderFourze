@@ -38,4 +38,9 @@ sub _initialize {
     $self->{switch} = \@switch_class;
 }
 
+sub say {
+    my ($self) = @_;
+    printf "%s\n", ($self->bgm) ? $self->bgm:$self->name;
+}
+
 1;

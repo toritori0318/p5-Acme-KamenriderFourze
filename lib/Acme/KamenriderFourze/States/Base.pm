@@ -13,27 +13,23 @@ __PACKAGE__->mk_accessors(qw(
 
 sub new {
     my $class = shift;
-    my $args = ref $_[0] eq 'HASH' ? $_[0] : {@_};
+    my $self  = bless {}, $class;
 
-    my $self = $class->SUPER::new({
-        %$args
-    });
     $self->_initialize;
-    $self;
+    return $self;
 }
 
 sub _initialize {
     my $self = shift;
-#    my %info = $self->info;
-#    $self->{$_} = $info{$_} for keys %info;
-#    my @medal_class;
-#    for my $class (@{$self->{medal}}) {
-#        return if ref($class) ne '';
-#        my $module_name = "Acme::KamenriderOOO::Medal::${class}";
-#        load_class($module_name);
-#        push @medal_class, $module_name->new;
-#    }
-#    $self->{medal} = \@medal_class;
+    my %info = $self->info;
+    $self->{$_} = $info{$_} for keys %info;
+    return 1;
+}
+
+
+sub say {
+    my ($self) = @_;
+    printf "%s発動！\n", $self->name;
 }
 
 1;

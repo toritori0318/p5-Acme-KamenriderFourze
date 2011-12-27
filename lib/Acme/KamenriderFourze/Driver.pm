@@ -33,6 +33,7 @@ sub bulk_set {
     for my $p (@pos) {
         next if scalar @switches == 0;
         $self->{$p} = shift @switches;
+        $self->{$p}->say;
     }
     $self->set_states;
 }
@@ -82,8 +83,8 @@ sub limitbreak {
     my @on_switch = grep { $_->status eq 'on' } @{$self->slot_array};
     my $limitbreak = $self->get_limitbreak(\@on_switch);
     if($limitbreak) {
-        printf "\n【リミットブレイク】 %s\n", $limitbreak->name;
-        print $limitbreak->bgm, "\n";
+        printf "【リミットブレイク】 %s\n", $limitbreak->name;
+        $limitbreak->say;
     }else{
         print "\nリミットブレイクに失敗したぞ！ \n";
     }

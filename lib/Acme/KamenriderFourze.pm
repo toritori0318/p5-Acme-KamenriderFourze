@@ -45,15 +45,16 @@ sub henshin_switch_on {
     my $driver = $self->{driver};
     die 'フォーゼドライバーにスイッチを４つセットしよう！' unless $driver && scalar @{$driver->slot_array} > 0;
 
-    print "スイッチ オン！\n";
+    print "\nスイッチ オン！\n";
     my @count_down = qw/スリー ツー ワン/;
     for (@count_down) {
         print $_,"\n";
         sleep 1;
     }
-    print "変身！\n\n";
+    print "変身！\n";
+    print "宇宙キターーーー！\n";
 
-    print $driver->states->name, "！\n" if $driver->states;
+    $driver->states->say if $driver->states;
 
     print "\n";
 }

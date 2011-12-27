@@ -35,4 +35,9 @@ sub _initialize {
     return 1;
 }
 
+sub say {
+    my ($self) = @_;
+    printf "%s\n", ($self->bgm) ? $self->bgm:$self->name;
+}
+
 1;
