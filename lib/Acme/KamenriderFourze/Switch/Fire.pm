@@ -8,7 +8,7 @@ use base qw(Acme::KamenriderFourze::Switch::Base);
 sub info {
     return (
         no         => 20,
-        name       => 'ファイア',
+        name       => 'ファイヤー',
         pos        => 1,
         states     => 'Fire',
         status     => 'off',
