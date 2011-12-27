@@ -1,0 +1,6 @@
+Revision history for Perl extension Acme::KamenriderFourze.
+
+0.01  Sat Dec 24 01:20:33 2011
+	- original version; created by h2xs 1.23 with options
+		-AX -n Acme::KamenriderFourze
+
