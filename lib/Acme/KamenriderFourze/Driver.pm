@@ -61,7 +61,7 @@ sub switch_on {
         }
     }
     elsif(exists $parameter{'switch_no'}) {
-        $switch = $self->{$pos[$parameter{'switch_no'}]};
+        $switch = $self->{$pos[$parameter{'switch_no'}-1]};
     }
     elsif(exists $parameter{'switch_name'}) {
         for my $p (@pos) {

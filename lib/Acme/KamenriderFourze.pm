@@ -72,6 +72,8 @@ sub select {
     my ($self, $type, $args) = @_;
     if($args && $args->{name}) {
         return grep { $args->{name} eq $_->{name} } @{$self->{$type}};
+    }elsif($args && $args->{no}) {
+        return grep { $args->{no} eq $_->{no} } @{$self->{$type}};
     }else{
         @{$self->{$type}};
     }
